@@ -23,15 +23,21 @@ session = Session()
 
 # estudiantes = session.query(Estudiante).all()
 # print(estudiantes)
+# for e in estudiantes:
+#    print(f"{e.id} - {e.apellido}")
+
 
 # print("--------------------------------------")
 # Obtener todos los registros de la clase Modulo
 # modulos = session.query(Modulo).all()
 # print(modulos)
 
-# print("--------------------------------------")
+print("--------------------------------------")
 # Obtener todos los registros de la clase Matricula
-# matriculas = session.query(Matricula).all()
+# En esta consulta de cada matricula estoy sacando nombre y apellido de cada estudiante asociado 
+matriculas = session.query(Matricula).all()
+for e in matriculas:
+    print(f"{e.estudiante.nombre} - {e.estudiante.apellido}")
 
 # nombre y apellido del estudiante de cada matrícula
 
